@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Tony Demo</title>
+	    <link rel="stylesheet" type="text/css" href="css/reset.css">
+	    <link rel="stylesheet" type="text/css" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+    <!-- =============== Nav Bar =============== -->
+		<div class="nav-wrapper">
+			<div class="nav-cont">
+				<div class="navlogo">
+					<a href="#">Tony Lee</a>
+				</div>
+	            <div class="navbar">
+	              <ul>
+	                <li class="active"><a href="#">Home</a></li>
+	                <li><a href="#about">About</a></li>
+	                <li><a href="#contact">Contact</a></li>
+	              </ul>
+	            </div>
+	            <div class="navbar right">
+	              <ul>
+	                <li><a href="#more">More</a></li>
+	              </ul>
+	            </div>
+            </div>
+		</div>
+
+    <!-- =============== Gallery Slider =============== -->
+		<div class="slider-wrapper">
+			<div class="slider-content">
+				<img class="slide" src="img/299.jpg" />
+				<img class="slide active" src="img/210.jpg" />
+				<img class="slide" src="img/240.jpg" />
+				<img class="slide" src="img/246.jpg" />
+				<img class="slide" src="img/179.jpg" />
+			</div>
+
+			<div class="slider-control left"><img src="svg/caret-left.svg" alt="icon caret-left" /></div>
+			<div class="slider-control right"><img src="svg/caret-right.svg" alt="icon caret-right" /></div>
+		</div>
+
+
+    <!-- =============== More Info =============== -->
+		<div class="moreInfo-wrapper"></div>
+
+
+    <!-- =============== Footer =============== -->
+		<div class="footer"></div>
+			
+
+		<script src="js/app.js"></script>
+		<script>
+			var node = document.getElementsByClassName('slider-wrapper')[0];
+			sliderApp.init(node);
+			
+			//sliderApp.fade(document.body);
+
+		</script>
+	</body>
+</html>
