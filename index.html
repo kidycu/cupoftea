@@ -70,34 +70,22 @@
 		</div>
 			
 
-		<script src="js/app.js"></script>
+		<script src="js/slider.js"></script>
 		<script src="js/util.js"></script>
-		<script>
+		<script>		
+			//util.fade();
 			slider.init();
-				var navWrapper = document.querySelector('.nav-wrapper');
-				console.log(navWrapper);
 
 			var el = document.querySelector('.nav-cue');
 			el.addEventListener('click', function(){
 				var navCueImg = document.querySelectorAll('.nav-cue img');
 				var navWrapper = document.querySelector('.nav-wrapper');
 				var navCue = document.querySelector('.nav-cue');
-				/*
-				if (that.className.indexOf('none') != -1){
-					that.className = that.className.replace(' ' + 'none', '');
-				} else {
-					that.className += ' '+ config.className.prev;
-				}*/
-
-				console.log(navWrapper);
 
 				util.toggle(navCueImg[0], 'none');
 				util.toggle(navCueImg[1], 'none');
 				util.toggle(navCue, 'nav-cue-show');
 				util.toggle(navWrapper, 'nav-wrapper-show');
-
-				console.log(navWrapper);
-				console.log(navCue);
 			});
 			
 		</script>

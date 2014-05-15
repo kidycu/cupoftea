@@ -54,27 +54,9 @@ var slider = {};
 	}
 
 
-	// ============== UTILiTIES ==============
-
-	var util = {
-		fade: function () {
-			var level = 1;
-			var step = function ( ) {
-				var hex = level.toString(16);
-				document.body.style.backgroundColor = '#FFFF' + hex + hex;
-				if (level < 15) {
-					level += 1;
-					setTimeout(step, 100);
-				}
-			};
-			setTimeout(step, 100);
-		}
-	}
-
-
 	// ============== SLIDER CLASS ==============
+	
 	obj.init = function () {
-		util.fade();
 		prop.init();
 		prop.controls.left.addEventListener('click', obj.leftNext);
 		prop.controls.right.addEventListener('click', obj.rightPrev);

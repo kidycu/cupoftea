@@ -8,11 +8,38 @@ var util = {};
 	// ============== PROPERTIES ==============
 
 	var config = {
-		className: {
+	}
 
+	obj.fade = function () {
+		var level = 1;
+		var step = function ( ) {
+			var hex = level.toString(16);
+			document.body.style.backgroundColor = '#FFFF' + hex + hex;
+			if (level < 15) {
+				level += 1;
+				setTimeout(step, 100);
+			}
+		};
+		setTimeout(step, 100);
+	}
+
+	obj.addClass = function (el, className) {
+		if (el.classList) {
+			el.classList.add(className);
+		}
+		else {
+			el.className += ' ' + className;
 		}
 	}
 
+	obj.removeClass = function (el, className) {
+		if (el.classList) {
+			el.classList.remove(className);
+		}
+		else {
+			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+	}
 
 	obj.toggle = function (el, className) {
 		if (el.classList) {
@@ -28,6 +55,13 @@ var util = {};
 
 		  el.className = classes.join(' ');
 		}
+	}
+
+	obj.each = function (selector, fn) {
+		var elements = document.querySelectorAll(selector);
+		Array.prototype.forEach.call(elements, function(el, i){
+			fn();
+		});
 	}
 
 })(util);

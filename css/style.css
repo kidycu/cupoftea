@@ -1,50 +1,5 @@
 /* Style.css by Tony Lee */
 
-.none {
-	display:none;
-}
-
-.block {
-	display:block;
-}
-
-.inlineBlock {
-	display:inline-block;
-}
-
-.red {
-	background-color:red;
-}
-
-.green {
-	background-color:green;
-}
-
-.blue {
-	background-color:blue;
-}
-
-.left {
-	float:left;
-}
-
-.right {
-	float:right;
-}
-
-.abs-left {
-	left:0px;
-}
-
-.abs-right {
-	right:0px;
-}
-
-.transparent {
-	zoom: 1; filter: alpha(opacity=50); opacity: 0.5;
-}
-
-
 html, body {
 	position:relative;
 	width:100%;
@@ -248,5 +203,55 @@ html, body {
 	background-color:rgb(244,244,244);
 }
 
-.footer .
+.footer spam{
+
+}
+
+
+/* =============== Property style =============== */
+
+.none {
+	display:none;
+}
+
+.block {
+	display:block;
+}
+
+.inlineBlock {
+	display:inline-block;
+}
+
+.red {
+	background-color:red;
+}
+
+.green {
+	background-color:green;
+}
+
+.blue {
+	background-color:blue;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+.abs-left {
+	left:0px;
+}
+
+.abs-right {
+	right:0px;
+}
+
+.transparent {
+	zoom: 1; filter: alpha(opacity=50); opacity: 0.5;
+}
+
 
