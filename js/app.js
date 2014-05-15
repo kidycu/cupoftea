@@ -4,20 +4,20 @@ var sliderApp = {};
 
 (function(obj){
 	'use strict';
-
-	// ============== FEATURE DETECT ==============
-	if (!Array.prototype.forEach) {
-		Array.prototype.forEach = function (fn, scope) {
-			var i, len;
-			for (i = 0, len = this.length; i < len; ++i) {
-				if (i in this) {
-					fn.call(scope, this[i], i, this);
-				}
-			}
-		};
-	}
 	
 	// ============== PROPERTIES ==============
+
+	var config = {
+		className: {
+			active: 'active',
+			next: 'next',
+			prev: 'prev',
+			slideImg: 'slide',
+			control: 'slider-control',
+			left: 'left',
+			right: 'right'
+		}
+	}
 
 	var prop = {
 		scope: null,
@@ -32,13 +32,13 @@ var sliderApp = {};
 		prevIndex: null,
 
 		init: function (node) {
-			this.scope = node;
+			this.scope = node || document;
 			this.items = [];
-			var nodeList = node.querySelectorAll('img.slide');
+			var nodeList = node.querySelectorAll('.' + config.className.slideImg);
 			for(var i = nodeList.length; i--; this.items.unshift(nodeList[i]));
-			this.controls.left = node.querySelector('.slider-control.left');
-			this.controls.right = node.querySelector('.slider-control.right');
-			var activeItem = this.scope.querySelector('.slide.active');
+			this.controls.left = node.querySelector('.' + config.className.control + '.' + config.className.left);
+			this.controls.right = node.querySelector('.' + config.className.control + '.' + config.className.right);
+			var activeItem = this.scope.querySelector('.' + config.className.active);
 			this.activeIndex = this.items.indexOf(activeItem);
 			this.nextIndex = this.activeIndex + 1;
 			this.prevIndex = this.activeIndex - 1;
@@ -46,8 +46,8 @@ var sliderApp = {};
 			if (this.prevIndex < 0) this.prevIndex = this.items.length-1;
 			var nextItem = this.items[this.nextIndex];
 			var prevItem = this.items[this.prevIndex];
-			nextItem.className = nextItem.className + ' next';
-			prevItem.className = prevItem.className + ' prev';
+			nextItem.className = nextItem.className + ' ' + config.className.next;
+			prevItem.className = prevItem.className + ' '+ config.className.prev;
 		}
 	}
 
@@ -108,18 +108,18 @@ var sliderApp = {};
 		var activeItem = prop.items[prop.activeIndex];
 		var nextItem = prop.items[prop.nextIndex];
 		var prevItem = prop.items[prop.prevIndex];
-		activeItem.className = activeItem.className.replace(' active','');
-		nextItem.className = nextItem.className.replace(' next','');
-		prevItem.className = prevItem.className.replace(' prev','');
+		activeItem.className = activeItem.className.replace(' ' + config.className.active,'');
+		nextItem.className = nextItem.className.replace(' ' + config.className.next,'');
+		prevItem.className = prevItem.className.replace(' ' + config.className.prev,'');
 	};
 
 	obj.slide = function () {
 		var activeItem = prop.items[prop.activeIndex];
 		var nextItem = prop.items[prop.nextIndex];
 		var prevItem = prop.items[prop.prevIndex];
-		activeItem.className = activeItem.className + ' active';
-		nextItem.className = nextItem.className + ' next';
-		prevItem.className = prevItem.className + ' prev';
+		activeItem.className = activeItem.className + ' ' + config.className.active;
+		nextItem.className = nextItem.className + ' ' + config.className.next;
+		prevItem.className = prevItem.className + ' ' + config.className.prev;
 		setTimeout( function(){
 			prop.sliding = false;
 		}, 600);
