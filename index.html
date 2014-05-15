@@ -18,23 +18,27 @@
 	<body>
     <!-- =============== Nav Bar =============== -->
 		<div class="nav-wrapper">
-			<div class="nav-cont">
-				<div class="navlogo">
-					<a href="#">Tony Lee</a>
+			<div class="nav-content">
+				<div class="nav-logo">
+					<a href="#">Cup of Tea</a>
 				</div>
-	            <div class="navbar">
+	            <div class="nav-bar">
 	              <ul>
 	                <li class="active"><a href="#">Home</a></li>
 	                <li><a href="#about">About</a></li>
 	                <li><a href="#contact">Contact</a></li>
 	              </ul>
 	            </div>
-	            <div class="navbar right">
+	            <div class="nav-bar right">
 	              <ul>
 	                <li><a href="#more">More</a></li>
 	              </ul>
 	            </div>
             </div>
+		</div>
+		<div class="nav-cue">
+			<img src="img/arrow-down-32.png" class="" width="25px" alt="icon arrow-down" />
+			<img src="img/x-mark-32.png" class="none" width="25px" alt="icon x-mark" />
 		</div>
 
     <!-- =============== Gallery Slider =============== -->
@@ -45,6 +49,9 @@
 				<img class="slide" src="img/240.jpg" />
 				<img class="slide" src="img/246.jpg" />
 				<img class="slide" src="img/179.jpg" />
+				<img class="slide" src="img/120.jpg" />
+				<img class="slide" src="img/024.jpg" />
+				<img class="slide" src="img/253.jpg" />
 			</div>
 
 			<a class="slider-control left"><img src="svg/caret-left.svg" alt="icon caret-left" /></a>
@@ -57,16 +64,42 @@
 
 
     <!-- =============== Footer =============== -->
-		<div class="footer"></div>
+		<div class="footer">
+			<spam>Tony Lee, Tzuchun Chou</spam>
+			<spam>&#169; 2014 Cup of Tea</spam>
+		</div>
 			
 
 		<script src="js/app.js"></script>
+		<script src="js/util.js"></script>
 		<script>
-			var node = document.getElementsByClassName('slider-wrapper')[0];
-			sliderApp.init(node);
-			
-			//sliderApp.fade(document.body);
+			slider.init();
+				var navWrapper = document.querySelector('.nav-wrapper');
+				console.log(navWrapper);
 
+			var el = document.querySelector('.nav-cue');
+			el.addEventListener('click', function(){
+				var navCueImg = document.querySelectorAll('.nav-cue img');
+				var navWrapper = document.querySelector('.nav-wrapper');
+				var navCue = document.querySelector('.nav-cue');
+				/*
+				if (that.className.indexOf('none') != -1){
+					that.className = that.className.replace(' ' + 'none', '');
+				} else {
+					that.className += ' '+ config.className.prev;
+				}*/
+
+				console.log(navWrapper);
+
+				util.toggle(navCueImg[0], 'none');
+				util.toggle(navCueImg[1], 'none');
+				util.toggle(navCue, 'nav-cue-show');
+				util.toggle(navWrapper, 'nav-wrapper-show');
+
+				console.log(navWrapper);
+				console.log(navCue);
+			});
+			
 		</script>
 	</body>
 </html>
