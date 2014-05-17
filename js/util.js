@@ -52,16 +52,8 @@ var util = {};
 		    classes.splice(existingIndex, 1);
 		  else
 		    classes.push(className);
-
 		  el.className = classes.join(' ');
 		}
-	}
-
-	obj.each = function (selector, fn) {
-		var elements = document.querySelectorAll(selector);
-		Array.prototype.forEach.call(elements, function(el, i){
-			fn();
-		});
 	}
 
 })(util);

@@ -44,14 +44,14 @@
     <!-- =============== Gallery Slider =============== -->
 		<div class="slider-wrapper">
 			<div class="slider-content">
-				<img class="slide" src="img/299.jpg" />
-				<img class="slide active" src="img/210.jpg" />
-				<img class="slide" src="img/240.jpg" />
-				<img class="slide" src="img/246.jpg" />
-				<img class="slide" src="img/179.jpg" />
-				<img class="slide" src="img/120.jpg" />
-				<img class="slide" src="img/024.jpg" />
-				<img class="slide" src="img/253.jpg" />
+				<img class="item" src="img/299.jpg" />
+				<img class="item active" src="img/210.jpg" />
+				<img class="item" src="img/240.jpg" />
+				<img class="item" src="img/246.jpg" />
+				<img class="item" src="img/179.jpg" />
+				<img class="item" src="img/120.jpg" />
+				<img class="item" src="img/024.jpg" />
+				<img class="item" src="img/253.jpg" />
 			</div>
 
 			<a class="slider-control left"><img src="svg/caret-left.svg" alt="icon caret-left" /></a>
@@ -65,8 +65,29 @@
 
     <!-- =============== Footer =============== -->
 		<div class="footer">
-			<spam>Tony Lee, Tzuchun Chou</spam>
-			<spam>&#169; 2014 Cup of Tea</spam>
+			<spam class="name">Tony Lee / Tzuchun Chou</spam>
+			<spam class="business">&#169;&nbsp;&nbsp;2014 Cup of Tea.</spam>
+			<span class="logo"><img width="50px" src="img/tea-64.png" /></span>
+			<span class="social fb">
+				<img width="50px" class="" src="img/facebook-5-64.png" />
+				<img width="50px" class="none" src="img/facebook-5-64-color.png" />
+			</span>
+			<span class="social gplus">
+				<img width="50px" class="" src="img/google-plus-5-64.png" />
+				<img width="50px" class="none" src="img/google-plus-5-64-color2.png" />
+			</span>
+			<span class="social pinterest">
+				<img width="50px" class="" src="img/pinterest-5-64.png" />
+				<img width="50px" class="none" src="img/pinterest-5-64-color.png" />
+			</span>
+			<span class="social twitter">
+				<img width="50px" class="" src="img/twitter-5-64.png" />
+				<img width="50px" class="none" src="img/twitter-5-64-color.png" />
+			</span>
+			<span class="social instagram">
+				<img width="50px" class="" src="img/instagram-5-64.png" />
+				<img width="50px" class="none" src="img/instagram-5-64-color.png" />
+			</span>
 		</div>
 			
 
@@ -76,8 +97,7 @@
 			//util.fade();
 			slider.init();
 
-			var el = document.querySelector('.nav-cue');
-			el.addEventListener('click', function(){
+			document.querySelector('.nav-cue').addEventListener('click', function(){
 				var navCueImg = document.querySelectorAll('.nav-cue img');
 				var navWrapper = document.querySelector('.nav-wrapper');
 				var navCue = document.querySelector('.nav-cue');
@@ -87,6 +107,21 @@
 				util.toggle(navCue, 'nav-cue-show');
 				util.toggle(navWrapper, 'nav-wrapper-show');
 			});
+
+			var elms = document.querySelectorAll('.social');
+			Array.prototype.forEach.call(elms, function(el, i){
+				el.addEventListener('mouseenter', function(){
+					var imgs = this.querySelectorAll('img');
+					util.toggle(imgs[0], 'none');
+					util.toggle(imgs[1], 'none');
+				});
+				el.addEventListener('mouseout', function(){
+					var imgs = this.querySelectorAll('img');
+					util.toggle(imgs[0], 'none');
+					util.toggle(imgs[1], 'none');
+				});
+			});
+			
 			
 		</script>
 	</body>

@@ -15,7 +15,7 @@ var slider = {};
 			active: 'active',
 			next: 'next',
 			prev: 'prev',
-			slideImg: 'slide',
+			item: 'item',
 			left: 'left',
 			right: 'right'
 		}
@@ -36,7 +36,7 @@ var slider = {};
 		init: function () {
 			this.scope = document.querySelector('.'+config.className.wrapper) || document;
 			this.items = [];
-			var nodeList = this.scope.querySelectorAll('.' + config.className.slideImg);
+			var nodeList = this.scope.querySelectorAll('.' + config.className.item);
 			for(var i = nodeList.length; i--; this.items.unshift(nodeList[i]));
 			this.controls.left = this.scope.querySelector('.' + config.className.control + '.' + config.className.left);
 			this.controls.right = this.scope.querySelector('.' + config.className.control + '.' + config.className.right);

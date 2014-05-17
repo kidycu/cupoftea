@@ -162,29 +162,29 @@ html, body {
 	cursor:pointer;
 }
 
-.slide {
+.item {
 	position:relative;
 	display:none;
 	min-width:1000px;
 	transition:0.6s ease-in-out left;
 }
 
-.slide.active,.slide.next,.slide.prev {
+.item.active,.item.next,.item.prev {
 	position:absolute;
 	top:0;
 	display:block;
 	width:100%;
 }
 
-.slide.active {
+.item.active {
 	left:0;
 }
 
-.slide.next {
+.item.next {
 	left:100%;
 }
 
-.slide.prev {
+.item.prev {
 	left:-100%;
 }
 
@@ -201,15 +201,38 @@ html, body {
 .footer {
 	position:relative;
 	width:100%;
-	height:300px;
-	border-top:1px solid rgb(230,230,230);
-	background-color:rgb(244,244,244);
+	height:200px;
+	background-color:#323232;
+	color:white;
 }
 
-.footer spam{
-
+.footer .name{
+	position:absolute;
+	top:130px;
+	left:40%;
 }
 
+.footer .business{
+	position:absolute;
+	top:40px;
+	left:50px;
+}
+
+.footer .logo{
+	position:absolute;
+	top:60px;
+	left:46%;
+}
+
+.footer .social{
+	margin-top:20px;
+	float:right;
+	transition:2s ease-in-out display;
+}
+
+.footer .fb {
+	margin-right:20px;
+}
 
 /* =============== Property style =============== */
 
