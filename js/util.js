@@ -2,7 +2,7 @@
 
 var util = {};
 
-(function(obj){
+!function(obj){
 	'use strict';
 	
 	// ============== PROPERTIES ==============
@@ -56,4 +56,4 @@ var util = {};
 		}
 	}
 
-})(util);
+}(util);

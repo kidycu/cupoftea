@@ -2,7 +2,7 @@
 
 var slider = {};
 
-(function(obj){
+!function(obj){
 	'use strict';
 	
 	// ============== PROPERTIES ==============
@@ -110,4 +110,4 @@ var slider = {};
 	};
 
 	
-})(slider);
+}(slider);
