@@ -4,7 +4,7 @@
 	    <meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Tony Demo</title>
+	    <title>Cup of Tea</title>
 	    <link rel="stylesheet" type="text/css" href="css/reset.css">
 	    <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -19,26 +19,20 @@
     <!-- =============== Nav Bar =============== -->
 		<div class="nav-wrapper">
 			<div class="nav-content">
-				<div class="nav-logo">
-					<a href="#">Cup of Tea</a>
-				</div>
-	            <div class="nav-bar">
-	              <ul>
-	                <li class="active"><a href="#">Home</a></li>
-	                <li><a href="#about">About</a></li>
-	                <li><a href="#contact">Contact</a></li>
-	              </ul>
-	            </div>
-	            <div class="nav-bar right">
-	              <ul>
-	                <li><a href="#more">More</a></li>
-	              </ul>
-	            </div>
+            	<a class="nav-logo" href="#">Cup of Tea</a>
+				<ul class="">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<ul class="nav-right">
+					<li><a href="#more">More</a></li>
+				</ul>
             </div>
-		</div>
-		<div class="nav-cue">
-			<img src="img/arrow-down-32.png" class="" width="25px" alt="icon arrow-down" />
-			<img src="img/x-mark-32.png" class="none" width="25px" alt="icon x-mark" />
+			<div class="nav-cue">
+				<img src="img/arrow-down-32.png" class="" width="25px" alt="icon arrow-down" />
+				<img src="img/x-mark-32.png" class="none" width="25px" alt="icon x-mark" />
+			</div>
 		</div>
 
     <!-- =============== Gallery Slider =============== -->
@@ -61,47 +55,7 @@
 
     <!-- =============== More Info =============== -->
 		<div class="moreInfo-wrapper">
-			<div class="grid">
-				<p class="grid-title">All Updates</p>
-				<div class="col-1-3">
-					<div class="update-box">
-						<div class="update-info">
-							<img src="http://lorempixel.com/200/120/people/1" />
-							<spam>Lorem Ipsum is simply dummy text</spam>
-						</div>
-						<div class="update-content">
-							<img src="http://lorempixel.com/200/120/food/1" />
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-1-3">
-					<div class="module">
-						<img src="http://lorempixel.com/200/120/food/2" />
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					</div>
-				</div>
-				<div class="col-1-3">
-					<div class="module">
-						<img src="http://lorempixel.com/200/120/food/3" />
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					</div>
-				</div>
-				<div class="col-2-4">
-					<div class="module">
-						<img src="http://lorempixel.com/180/120/food/4" />
-						<spam>Lorem Ipsum is simply dummy text</spam>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					</div>
-				</div>
-				<div class="col-2-4">
-					<div class="module">
-						<img src="http://lorempixel.com/180/120/food/5" />
-						<spam>Lorem Ipsum is simply dummy text</spam>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					</div>
-				</div>
-			</div>
+			
 			<div class="grid">
 				<p class="grid-title">Gird System</p>
 				<div class="col-1-2">
@@ -200,13 +154,12 @@
 
 			document.querySelector('.nav-cue').addEventListener('click', function(){
 				var navCueImg = document.querySelectorAll('.nav-cue img');
-				var navWrapper = document.querySelector('.nav-wrapper');
-				var navCue = document.querySelector('.nav-cue');
-
+				var navWrapper = document.querySelector('.nav-content');
+			
 				util.toggle(navCueImg[0], 'none');
 				util.toggle(navCueImg[1], 'none');
-				util.toggle(navCue, 'nav-cue-show');
-				util.toggle(navWrapper, 'nav-wrapper-show');
+				
+				util.toggle(navWrapper, 'nav-content-show');
 			});
 
 			var elms = document.querySelectorAll('.social');
