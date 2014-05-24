@@ -4,6 +4,7 @@
 	    <meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
 	    <title>Cup of Tea</title>
 	    <link rel="stylesheet" type="text/css" href="css/reset.css">
 	    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -36,8 +37,8 @@
 		</div>
 
     <!-- =============== Gallery Slider =============== -->
-		<div class="slider-wrapper">
-			<div class="slider-content">
+		<div class="slider-wrapper unselectable">
+			<div class="slider-content unselectable">
 				<img class="item" src="img/299.jpg" />
 				<img class="item active" src="img/210.jpg" />
 				<img class="item" src="img/240.jpg" />
@@ -48,15 +49,31 @@
 				<img class="item" src="img/253.jpg" />
 			</div>
 
-			<a class="slider-control left"><img src="svg/caret-left.svg" alt="icon caret-left" /></a>
-			<a class="slider-control right"><img src="svg/caret-right.svg" alt="icon caret-right" /></a>
+			<a class="slider-control unselectable left"><img class="unselectable" src="svg/caret-left.svg" alt="icon caret-left" /></a>
+			<a class="slider-control unselectable right"><img class="unselectable" src="svg/caret-right.svg" alt="icon caret-right" /></a>
 		</div>
 
 
     <!-- =============== More Info =============== -->
 		<div class="moreInfo-wrapper">
-			
-			<div class="grid">
+			<div class="update-box">
+				<img src="img/placeholder.jpg" />
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+
+			<div class="update-box">
+				<img src="img/placeholder.jpg" />
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+
+			<div class="update-box">
+				<img src="img/placeholder.jpg" />
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+			</div>
+
+
+
+			<div class="grid none">
 				<p class="grid-title">Gird System</p>
 				<div class="col-1-2">
 					<div class="module">
