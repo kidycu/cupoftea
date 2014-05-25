@@ -35,9 +35,14 @@ var nav = {};
 			util.toggle(navCueIcon, config.className.cueCloseIcon);
 			util.toggle(navCueIcon, config.className.cueOpenIcon);
 			util.toggle(navContent, config.className.contentShow);
-			setTimeout(function(){
-				util.toggle(navContentUl, config.className.hide);
-			}, 240);
+
+			if (navContentUl.className.indexOf(config.className.hide)!=-1) {
+				util.removeClass(navContentUl, config.className.hide);
+			} else {
+				setTimeout(function(){
+					util.addClass(navContentUl, config.className.hide);
+				}, 350);
+			}
 		});
 
 		var itemElms = document.querySelectorAll('.' + config.className.content + " > ul > li > a");
@@ -54,6 +59,5 @@ var nav = {};
 			});
 		});
 	};
-
 
 }(nav);

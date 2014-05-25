@@ -232,7 +232,6 @@ var slider = {};
 			prop.sliding = false;
 		}, 300);
 	};
-
 	
 }(slider);
 
