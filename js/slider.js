@@ -76,7 +76,9 @@ var slider = {};
 		add: function(elm){
 			elm.addEventListener('swipeLeft', obj.leftNext);
 			elm.addEventListener('swipeRight', obj.rightPrev);
-			elm.addEventListener('touchstart', function(e){e.preventDefault()});
+			elm.addEventListener('touchstart', function(e){
+				//e.preventDefault()
+			});
 		},
 		customEventFunc: function(e,name){
 		    var aEvent = new Event(name);

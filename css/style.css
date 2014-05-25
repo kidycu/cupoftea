@@ -1,6 +1,6 @@
 /* Style.css by Tony Lee */
 
-*, *:after, *:before {
+*, *::after, *::before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -79,6 +79,11 @@ html, body {
 	background-color: #434343;
 }
 
+.nav-content > ul > li > a.nav-active {
+	color: #ffffff;
+	background-color: #343434;
+}
+
 .nav-logo {
 	display: inline-block;
 	text-decoration: none;
@@ -91,11 +96,18 @@ html, body {
 .nav-content-show {
 	max-height: 70px;
 }
+
 	
 @media screen and (max-width: 767px) {
-	.nav-logo, .nav-content > ul, .nav-content > ul > li {
+	.nav-logo, .nav-content > ul {
 		display: block;
 		text-align: center;
+	} 
+	.nav-content > ul > li{
+		width:50%;
+	}
+	.nav-content > ul > li:nth-child(odd){
+		border-right: 1px solid #434343;
 	}
 
 	.nav-content > ul > li > a{
@@ -104,14 +116,23 @@ html, body {
 	}
 
 	.nav-content-show {
-		max-height: 300px;
+		max-height: 380px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1020px) {
+	.nav-logo, .nav-content > ul {
+		display: block;
+		text-align: center;
+	}
+	.nav-content > ul > li{
+		width:33.33%;
+	}
+	.nav-content-show {
+		max-height: 220px;
 	}
 }
 
-@media screen and (min-width: 1024px) {
-	.nav-right {
-		float: right;
-	}
+@media screen and (min-width: 1021px) {
 }
 
 
@@ -141,11 +162,6 @@ html, body {
 	content: "";
 	display: block;
 	padding-top: 65%; 	/* initial ratio */
-}
-
-@media screen and (max-width: 767px) {
-	.slider-wrapper {
-	}
 }
 
 .slider-content {
@@ -245,26 +261,19 @@ html, body {
 
 
 /* =============== More Info style ============== */
-.moreInfo-wrapper {
+.update-wrapper {
 	position: relative;
-	width: 100%;
-	background-color: #ffffff;
-	padding: ;
-}
-.moreInfo-wrapper:after {
-	content: "";
-	display: table;
-	clear: both;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .update-box {
-	width: 33%;
-	float: left;
 	background: #efefef;
 	box-shadow: 0px 0px 2px 1px #ddd;
-	margin: 20px;
 	padding: 10px;
 	text-align: center;
+	overflow: hidden;
+	min-height: 400px;
 }
 
 .update-box p {
@@ -272,18 +281,21 @@ html, body {
 }
 
 .update-box img {
-	width: 80%;
+	width: 200px;
 }
 
 @media screen and (max-width: 767px) {
-	.update-box {
-		width: 100%;
-		margin-right: 20px;
-	}
 	.update-box img {
-		width: 20%;
+		width: 160px;
 		float: left;
-		margin: 5px 15px 5px 5px;
+		margin: 0px 15px 5px 0px;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.update-box img {
+		width: 180px;
+		float: left;
+		margin: 0px 15px 5px 0px;
 	}
 }
 
@@ -317,8 +329,33 @@ html, body {
 	width: 100%;
 }
 
+@media screen and (max-width: 767px) {	
+	.col-1-2, .col-1-3, .col-1-4,
+	.col-1-5, .col-1-8, .col-2-3,
+	.col-2-4, .col-2-5, .col-2-8,
+	.col-3-4, .col-3-5, .col-3-8,
+	.col-4-5, .col-4-8, .col-5-8, 
+	.col-6-8, .col-7-8, .col-2-2, 
+	.col-3-3, .col-4-4, .col-5-5,
+	.col-8-8 {
+		width:100%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.col-1-2, .col-1-3, .col-1-4,
+	.col-1-5, .col-1-8, .col-2-3,
+	.col-2-4, .col-2-5, .col-2-8,
+	.col-3-4, .col-3-5, .col-3-8,
+	.col-4-5, .col-4-8, .col-5-8, 
+	.col-6-8, .col-7-8, .col-2-2, 
+	.col-3-3, .col-4-4, .col-5-5,
+	.col-8-8 {
+		width:50%;
+	}
+}
+
 .grid {
-  background: #fafafa;
+  background: #ffffff;
   margin: 0 0 20px 0;
   padding: 10px;
 }
@@ -347,7 +384,7 @@ html, body {
 	padding: 10px;
 }
 
-[class*='col-']:last-of-type {
+[class*='col-']::last-of-type {
 	padding-right: ;
 }
 
@@ -361,31 +398,63 @@ html, body {
 	color: white;
 }
 
-.footer .name{
+.footer div{
 	position: absolute;
-	top: 130px;
-	left: 40%;
+	text-align: center;
+	padding: 5px;
 }
 
-.footer .business{
-	position: absolute;
-	top: 40px;
-	left: 50px;
+.footer .social-div{
+	top: 20px;
+	right: 30px;
 }
 
-.footer .logo{
-	position: absolute;
-	top: 60px;
-	left: 46%;
+.footer .logo-div{
+	position: relative;
+	top:50px;
 }
 
-.footer .social{
-	margin-top: 20px;
-	float: right;
+.footer .logo-div img {
+	margin: 10px;
 }
 
-.footer .fb {
-	margin-right: 20px;
+.footer .business-div{
+	top: 35px;
+	left: 30px;
+}
+
+.business-div .business,
+.logo-div .name, 
+.logo-div .logo{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}
+
+.social-div .social{
+	position: relative;
+	display: inline-block;
+}
+
+@media screen and (max-width: 767px) {	
+	.footer {
+		height: 220px;
+	}
+	.footer div{
+		position: relative;
+	}
+	.footer .social-div{
+		top: 0px;
+		right: 0px;
+	}
+
+	.footer .logo-div{
+		top:0px;
+	}
+	.footer .business-div{
+		top: 0px;
+		left: 0px;
+	}
 }
 
 /* =============== Property style =============== */

@@ -56,13 +56,14 @@ var util = {};
 		}
 	}
 
-	obj.getJSON = function (url) {
+	obj.getJSON = function (url, func) {
 		request = new XMLHttpRequest();
 		request.open('GET', url, true);
 		request.onload = function() {
 			if (request.status >= 200 && request.status < 400){
 				// Success!
-				rerutn JSON.parse(request.responseText);
+				data = JSON.parse(request.responseText);
+				func(data);
 			} else {
 				// We reached our target server, but it returned an error
 
