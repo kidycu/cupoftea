@@ -315,7 +315,7 @@ html, body {
 }
 
 .demo-page{
-	padding:300px auto 300px 100px;
+	margin:300px auto 300px 10px;
 	font-size: 3em;
 	font-weight: bold;
 }
