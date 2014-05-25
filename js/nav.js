@@ -77,7 +77,6 @@ var nav = {};
 		});
 
 		// init Home page
-
 		util.getContent('home.html', function(data){
 			var contentDiv = document.querySelector('.' + config.className.contentDiv);
 			contentDiv.innerHTML = '';
