@@ -21,7 +21,7 @@
 		<div class="nav-wrapper">
 			<div class="nav-content">
             	<a class="nav-logo" href="#">Cup of Tea</a>
-				<ul class="">
+				<ul class="hide">
 					<li><a class="nav-active" href="#">Home</a>
 					</li><li><a class="" href="#about">Photography</a>
 					</li><li><a class="" href="#contact">Style</a>
@@ -31,8 +31,7 @@
 				</ul>
             </div>
 			<div class="nav-cue">
-				<img src="img/arrow-down-32.png" class="" width="25px" alt="icon arrow-down" />
-				<img src="img/x-mark-32.png" class="none" width="25px" alt="icon x-mark" />
+				<div class="nav-cue-close-icon"></div>		
 			</div>
 		</div>
 
@@ -151,26 +150,11 @@
     <!-- =============== Footer =============== -->
 		<div class="footer">
 			<div class="social-div">
-				<span class="social fb">
-					<img width="50px" class="" src="img/facebook-5-64.png" />
-					<img width="50px" class="none" src="img/facebook-5-64-color.png" />
-				</span>
-				<span class="social gplus">
-					<img width="50px" class="" src="img/google-plus-5-64.png" />
-					<img width="50px" class="none" src="img/google-plus-5-64-color2.png" />
-				</span>
-				<span class="social pinterest">
-					<img width="50px" class="" src="img/pinterest-5-64.png" />
-					<img width="50px" class="none" src="img/pinterest-5-64-color.png" />
-				</span>
-				<span class="social twitter">
-					<img width="50px" class="" src="img/twitter-5-64.png" />
-					<img width="50px" class="none" src="img/twitter-5-64-color.png" />
-				</span>
-				<span class="social instagram">
-					<img width="50px" class="" src="img/instagram-5-64.png" />
-					<img width="50px" class="none" src="img/instagram-5-64-color.png" />
-				</span>
+				<div class="fb"></div>
+				<div class="gplus"></div>
+				<div class="pinterest"></div>
+				<div class="twitter"></div>
+				<div class="instagram"></div>
 			</div>
 			<div class="logo-div">
 				<span class="logo"><img width="50px" src="img/tea-64.png" /></span>
@@ -187,23 +171,6 @@
 		<script>		
 			nav.init();
 			slider.init();
-			
-
-			var elms = document.querySelectorAll('.social');
-			Array.prototype.forEach.call(elms, function(el, i){
-				el.addEventListener('mouseenter', function(){
-					var imgs = this.querySelectorAll('img');
-					util.toggle(imgs[0], 'none');
-					util.toggle(imgs[1], 'none');
-				});
-				el.addEventListener('mouseout', function(){
-					var imgs = this.querySelectorAll('img');
-					util.toggle(imgs[0], 'none');
-					util.toggle(imgs[1], 'none');
-				});
-			});
-			
-			
 		</script>
 	</body>
 </html>

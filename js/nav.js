@@ -15,8 +15,11 @@ var nav = {};
 			contentShow: 'nav-content-show',
 			logo: 'nav-logo',
 			cue: 'nav-cue',
+			cueCloseIcon: 'nav-cue-close-icon',
+			cueOpenIcon: 'nav-cue-open-icon',
 			active: 'nav-active',
-			none: 'none'
+			none: 'none',
+			hide: 'hide'
 		}
 	};
 
@@ -25,12 +28,16 @@ var nav = {};
 	obj.init = function(){
 		var cueElm = document.querySelector('.' + config.className.cue);
 		cueElm.addEventListener('click', function(){
-			var navCueImg = document.querySelectorAll('.' + config.className.cue + ' img');
+			var navCueIcon = document.querySelector('.' + config.className.cue + ' div');
 			var navContent = document.querySelector('.' + config.className.content);
+			var navContentUl = document.querySelector('.' + config.className.content + ' ul');
 		
-			util.toggle(navCueImg[0], config.className.none);
-			util.toggle(navCueImg[1], config.className.none);
+			util.toggle(navCueIcon, config.className.cueCloseIcon);
+			util.toggle(navCueIcon, config.className.cueOpenIcon);
 			util.toggle(navContent, config.className.contentShow);
+			setTimeout(function(){
+				util.toggle(navContentUl, config.className.hide);
+			}, 240);
 		});
 
 		var itemElms = document.querySelectorAll('.' + config.className.content + " > ul > li > a");
