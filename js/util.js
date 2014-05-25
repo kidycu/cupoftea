@@ -1,4 +1,4 @@
-// slider.js by Tony Lee
+// util.js by Tony Lee
 
 var util = {};
 
@@ -8,6 +8,10 @@ var util = {};
 	// ============== PROPERTIES ==============
 
 	var config = {
+		path: {
+			view: 'view/',
+			js: 'js/'
+		}
 	}
 
 	obj.fade = function () {
@@ -57,7 +61,7 @@ var util = {};
 	}
 
 	obj.getJSON = function (url, func) {
-		request = new XMLHttpRequest();
+		var request = new XMLHttpRequest();
 		request.open('GET', url, true);
 		request.onload = function() {
 			if (request.status >= 200 && request.status < 400){
@@ -75,5 +79,25 @@ var util = {};
 		};
 		request.send();
 	}
+
+	obj.getContent = function (url, func) {
+		var request = new XMLHttpRequest();
+		request.open('GET', config.path.view + url, true);
+		request.onload = function() {
+			if (request.status >= 200 && request.status < 400){
+				// Success!
+				var data = request.responseText;
+				func(data);
+			} else {
+				// We reached our target server, but it returned an error
+
+			}
+		};
+		request.onerror = function() {
+			// There was a connection error of some sort
+		};
+		request.send();
+	}
+
 
 }(util);

@@ -19,7 +19,8 @@ var nav = {};
 			cueOpenIcon: 'nav-cue-open-icon',
 			active: 'nav-active',
 			none: 'none',
-			hide: 'hide'
+			hide: 'hide',
+			contentDiv: 'main-content'
 		}
 	};
 
@@ -56,8 +57,33 @@ var nav = {};
 
 				// add active class
 				util.addClass(this, config.className.active);
+
+				// put content in main-content div
+				if (this.getAttribute('data-tag').indexOf('home')!=-1){
+					util.getContent(this.getAttribute('data-tag')+'.html', function(data){
+						var contentDiv = document.querySelector('.' + config.className.contentDiv);
+						contentDiv.innerHTML = '';
+						contentDiv.innerHTML = data;
+						slider.init();
+					});
+				} else {
+					util.getContent(this.getAttribute('data-tag')+'.html', function(data){
+						var contentDiv = document.querySelector('.' + config.className.contentDiv);
+						contentDiv.innerHTML = '';
+						contentDiv.innerHTML = data;
+					});
+				}
 			});
 		});
+
+		// init Home page
+
+		util.getContent('home.html', function(data){
+			var contentDiv = document.querySelector('.' + config.className.contentDiv);
+			contentDiv.innerHTML = '';
+			contentDiv.innerHTML = data;
+			slider.init();
+		})
 	};
 
 }(nav);
